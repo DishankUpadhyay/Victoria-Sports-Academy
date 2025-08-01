@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Victoria Sports Academy</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
+	 <link href="fonts/css/fontawesome.min.css" rel="stylesheet" >
+	<link href="fonts/css/brands.min.css" rel="stylesheet" />
+    <link href="fonts/css/solid.min.css" rel="stylesheet" />
+	<link href="css/global.css" rel="stylesheet">
+	<link href="css/matches.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+	<link href="css/flag-icons.css" rel="stylesheet">
+<style>
+
+		.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo-img {
+  width: 80px; /* adjust as needed */
+  height: 80px;
+  border-radius: 50%; /* remove if you don't want circular */
+}
+
+.scroll-container {
+      overflow: hidden;
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .scroll-content {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 30s linear infinite;
+      gap: 20px;
+    }
+
+    .scroll-content video {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .scroll-content video:hover {
+      filter: grayscale(0%);
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .about-section {
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1d3557;
+    }
+
+    .highlight {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .divider {
+      height: 3px;
+      width: 80px;
+      background-color: #d4af37;
+      margin: 0 auto 30px;
+    }
+
+    .about-img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-box {
+      background: #fdfdfd;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #1d3557;
+    }
+
+    .icon-title i {
+      color: #d4af37;
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .icon-title {
+        font-size: 1.3rem;
+      }
+    }
+
+	
+    .facilities-section {
+      padding: 60px 20px;
+      background-color: #000;
+      text-align: center;
+      color: #fff;
+    }
+
+    .facilities-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+
+    .facilities-section p {
+      color: #ccc;
+    }
+
+    .facility-card {
+      padding: 30px 20px;
+      border-radius: 10px;
+      background-color: #111;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .facility-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .facility-icon {
+      font-size: 40px;
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+
+    .facility-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #FFD700;
+    }
+
+    .facility-desc {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .count {
+      color: #FFD700;
+    }
+/* Scoped footer styles */
+.vs-footer {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 60px 20px 30px;
+}
+
+.vs-footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.vs-footer-column h3 {
+  font-size: 1.6rem;
+  margin: 10px 0 5px;
+  color: #f5b400;
+}
+
+.vs-footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #f5b400;
+}
+
+.vs-footer-column p,
+.vs-footer-column a {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.vs-footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vs-footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.vs-footer-column ul li a:hover {
+  color: #f5b400;
+  transition: 0.3s;
+}
+
+.vs-footer-tagline {
+  font-weight: bold;
+  color: #f5b400;
+  margin-bottom: 5px;
+}
+
+.vs-footer-sub {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.vs-footer-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.vs-footer-social a {
+  margin-right: 10px;
+  color: #f5b400;
+  font-size: 1.2rem;
+}
+
+.vs-footer-social a:hover {
+  color: #fff;
+}
+
+.vs-footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 30px;
+}
+
+.vs-footer-column p {
+  margin: 4px 0; /* Reduce vertical spacing */
+  line-height: 1.4;
+}
+
+.vs-footer-column h4 {
+  margin-bottom: 10px; /* Keep space below heading */
+}
+
+/* .vs-footer-social {
+  margin-top: px;
+} */
+
+
+header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .logo-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 24px;
+      height: 2px;
+      background-color: #1a1a1a;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background: #fdf6f2;
+      padding: 1rem 1.5rem;
+    }
+
+    .mobile-nav a {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+       .logo-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    }
+
+	#cta-contact input,
+#cta-contact textarea {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+#cta-contact input:focus,
+#cta-contact textarea:focus {
+  border-color: #fcb900;
+  outline: none;
+}
+
+/* Floating Button */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #25D366;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.whatsapp-float-btn:hover {
+  transform: scale(1.1);
+}
+.whatsapp-float-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Popup Message */
+.whatsapp-popup {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #fff;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-size: 14px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.whatsapp-popup span:first-child {
+  flex: 1;
+}
+.whatsapp-close {
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}
+
+.team_1l1i1 img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.team_1l1i1 img:hover {
+  filter: grayscale(0%);
+}
+
+    
+	</style>
+</head>
+<body>
+
+
+<header>
+    <div class="logo">
+      <a href="/index.html"><img src="/images/logo.png" alt="Logo" /></a>
+      <div class="logo-title">Victoria Sports Academy</div>
+    </div>
+    <nav>
+      <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/Gallery.html">Gallery</a>
+    <a href="/Events.html">Events And Programs</a>
+    <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/Gallery.html">Gallery</a>
+    <a href="/Events.html">Events And Programs</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+
+<section id="center" class="center_about relative"> 
+  <div class="overlay"></div> <div class="center_om container-xl h-100 d-flex align-items-center justify-content-start"> 
+    <div class="row center_o1 w-100"> <div class="col-md-12"> <h1 class="text-white fw-bold">ABOUT US</h1> <h6 class="mb-0 col_yell"> 
+      <a class="text-light" href="#">HOME</a> <span class="text-white-50 mx-2">/</span> ABOUT US </h6> 
+    </div> 
+  </div> 
+</div> 
+</section>
+
+<section class="about-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Text Column -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2 class="section-title">About <span class="highlight">Victoria Sports Academy</span></h2>
+        <div class="divider" data-aos="zoom-in"></div>
+        <p class="about-text">
+          Established in <span class="highlight">2016</span>, Victoria Sports is a premier sports academy committed to nurturing athletic excellence and promoting a healthy, active lifestyle. Located in the vibrant <span class="highlight">University City</span> at Skyline University College, Sharjah, we offer a dynamic range of services—from elite sports education to facility management, rental services, and international programs.
+        </p>
+        <p class="about-text mt-3">
+          Our <span class="highlight">26-acre</span>, state-of-the-art sports facility reflects our unwavering commitment to developing world-class athletes across cricket, football, and more.
+        </p>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-lg-6 text-center" data-aos="fade-left">
+        <img src="/Images/01.jpg" alt="Sports Academy" class="about-img">
+      </div>
+    </div>
+
+    <!-- Vision & Mission Cards -->
+    <div class="row mt-5">
+      <div class="col-md-6" data-aos="fade-up-right">
+        <div class="card-box">
+          <div class="icon-title">
+            <i class="fas fa-eye"></i> Our Vision
+          </div>
+          <p class="about-text">
+            To build a generation of <span class="highlight">healthy, confident</span>, and proficient athletes equipped with the technical skills, mindset, and discipline to succeed—on and off the field.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6" data-aos="fade-up-left">
+        <div class="card-box">
+          <div class="icon-title">
+            <i class="fas fa-bullseye"></i> Our Mission
+          </div>
+          <p class="about-text">
+            To deliver impactful sports education and physical training beyond the classroom, cultivating <span class="highlight">leadership, discipline, teamwork</span>, and personal growth through high-quality experiences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="facilities-section">
+  <div class="container">
+    <h2 data-aos="fade-down">Our <span class="highlight">Facilities</span></h2>
+    <p class="mb-5" data-aos="fade-up">We provide international-standard infrastructure to train world-class athletes.</p>
+
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fas fa-baseball-ball"></i></div>
+          <div class="facility-title"><span class="count" data-target="5">0</span> Grounds</div>
+          <div class="facility-desc">Cricket Grounds with natural grass & floodlights</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fas fa-futbol"></i></div>
+          <div class="facility-title"><span class="count" data-target="2">0</span> Grounds</div>
+          <div class="facility-desc">Professional Football Training Fields</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fas fa-dumbbell"></i></div>
+          <div class="facility-title"><span class="count" data-target="20">0</span>+ Nets</div>
+          <div class="facility-desc">Cricket Practice Nets with turf and shade</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-sm-6 col-lg-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fas fa-building"></i></div>
+          <div class="facility-title">Multipurpose Complex</div>
+          <div class="facility-desc">Gym, offices, nursing room, cafeteria & more</div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-sm-6 col-lg-6" data-aos="zoom-in" data-aos-delay="500">
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fas fa-users"></i></div>
+          <div class="facility-title">Support Amenities</div>
+          <div class="facility-desc">Dressing rooms, pavilions, sports shop, 130+ parking spots</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="team" class="pt-5 pb-5">
+  <div class="container-xl">
+    <div class="row vacation_1 text-center mb-4">
+      <div class="col-md-12 ">
+        <h5 class="family_1 icon_tag">
+          <i class="fa fa-futbol-o me-1 col_yell"></i> Meet the Team
+        </h5>
+        <h2 class=" mt-3 mb-0">Our Coaching & Training Experts</h2>
+      </div>
+    </div>
+    <div class="row team_1">
+      <!-- Member 1 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="team_1l border_light">
+          <div class="team_1l1 position-relative">
+            <div class="team_1l1i1">
+              <img src="images/HARIS KHAN.JPG" class="img-fluid" alt="Haris Khan">
+            </div>
+          </div>
+          <div class="team_1l2 text-center p-3">
+            <h4><a href="#">Haris Khan</a></h4>
+            <h6 class="mb-0">Coach</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="team_1l border_light">
+          <div class="team_1l1 position-relative">
+            <div class="team_1l1i1">
+              <img src="images/SAFRAZ FAROOQ - HEAD COACH.JPG" class="img-fluid" alt="Sarfraz Farooq">
+            </div>
+          </div>
+          <div class="team_1l2 text-center p-3">
+            <h4><a href="#">Sarfraz Farooq</a></h4>
+            <h6 class="mb-0">Head Coach</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="team_1l border_light">
+          <div class="team_1l1 position-relative">
+            <div class="team_1l1i1">
+              <img src="images/Bisandu Adambarage.JPG" class="img-fluid" alt="Bisandu Adambarage">
+            </div>
+          </div>
+          <div class="team_1l2 text-center p-3">
+            <h4><a href="#">Bisandu Adambarage</a></h4>
+            <h6 class="mb-0">Coach</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="team_1l border_light">
+          <div class="team_1l1 position-relative">
+            <div class="team_1l1i1">
+              <img src="images/POOJA PATEL.JPG" class="img-fluid" alt="Pooja Patel">
+            </div>
+          </div>
+          <div class="team_1l2 text-center p-3">
+            <h4><a href="#">Pooja Patel</a></h4>
+            <h6 class="mb-0">Coach</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="team_1l border_light">
+          <div class="team_1l1 position-relative">
+            <div class="team_1l1i1">
+              <img src="Images/Tharindu Madushanka.JPG" class="img-fluid" alt="Ravi Mehra">
+            </div>
+          </div>
+          <div class="team_1l2 text-center p-3">
+            <h4><a href="#">Tharindu Madushanka</a></h4>
+            <h6 class="mb-0">Coach</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 6
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="team_1l border_light">
+          <div class="team_1l1 position-relative">
+            <div class="team_1l1i1">
+              <img src="images/member6.jpg" class="img-fluid" alt="Alisha Verma">
+            </div>
+          </div>
+          <div class="team_1l2 text-center p-3">
+            <h4><a href="#">Alisha Verma</a></h4>
+            <h6 class="mb-0">Performance Analyst</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</section>
+
+<footer class="vs-footer">
+  <div class="vs-footer-container">
+
+    <!-- Logo + Tagline -->
+    <div class="vs-footer-column">
+      <img src="/Images/logo.png" alt="Victoria Sports Logo" class="vs-footer-logo">
+      <h3>VICTORIA SPORTS Academy</h3>
+      <p class="vs-footer-tagline">PASSION UNLIMITED</p>
+      <p class="vs-footer-sub">Transforming Talent | Elevating Potential | Building Champions</p>
+    </div>
+
+    <!-- About -->
+    <div class="vs-footer-column">
+      <h4>About Us</h4>
+      <p>
+        Established in 2016, Victoria Sports is a premier sports academy committed to nurturing athletic excellence. Located at Skyline University College, Sharjah, we offer elite sports education, training, and facility services across a 26-acre world-class complex.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="vs-footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+       <li><a href="/Gallery.html">Gallery</a></li>
+       <li><a href="/Events.html">Events And Programs</a></li>
+       <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="vs-footer-column">
+      <h4>Contact Us</h4>
+      <p>Victoria Sports Academy,<br>Skyline University College,<br>University City, Sharjah, UAE</p>
+      <p>Phone 1: +971 0501871551 </p>
+      <p>Phone 2: +971 0586058511</p>
+      <p>Email: <a href="mailto:jai@victoriadports.me">jai@victoriadports.me</a></p>
+      <!-- <p>Website: <a href="https://www.victoriasportsme.com" target="_blank">victoriasportsme.com</a></p> -->
+
+      <div class="vs-footer-social">
+        <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+        <a href="https://www.instagram.com/victoriasportsacademyuae/"><i class="fab fa-instagram"></i></a>
+        <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="vs-footer-bottom">
+    <p>&copy; 2025 Victoria Sports Academy. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<div id="whatsappPopup" class="whatsapp-popup">
+  <span>Hi there, have a question? Chat with us on WhatsApp.</span>
+  <span class="whatsapp-close" onclick="closeWhatsAppPopup()">×</span>
+</div>
+
+<a href="https://wa.me/+971557932006?text=Hi%20I%20want%20to%20know%20more%20about%20your%20products" target="_blank" class="whatsapp-float-btn">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp" />
+</a>
+
+
+<script>
+  function closeWhatsAppPopup() {
+    document.getElementById("whatsappPopup").style.display = "none";
+  }
+
+  // Auto-hide popup after 15 seconds
+  setTimeout(() => {
+    const popup = document.getElementById("whatsappPopup");
+    if (popup) popup.style.display = "none";
+  }, 15000);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+
+  // Count-up Animation
+  const counters = document.querySelectorAll('.count');
+  const speed = 200;
+
+  const animateCount = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  // Trigger count when in view
+  let counted = false;
+  window.addEventListener("scroll", () => {
+    const section = document.querySelector('.facilities-section');
+    const top = section.getBoundingClientRect().top;
+    if (top < window.innerHeight && !counted) {
+      counted = true;
+      animateCount();
+    }
+  });
+</script>
+
+<script>
+  const toggle = document.getElementById("mobileMenuToggle");
+  const nav = document.getElementById("navLinks");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    toggle.innerHTML = nav.classList.contains("active") 
+      ? '<i class="fas fa-times"></i>' 
+      : '<i class="fas fa-bars"></i>';
+  });
+</script>
+
+  <script>
+    function toggleMobileNav() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('active');
+    }
+  </script>  
+
+</body>
+
+
+
+</html>
